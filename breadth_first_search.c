@@ -66,17 +66,18 @@ int queue[100];
 int main(){
     int front = 0;
     int rear = 0;
-
     int visited[6];
+
+    //setting the source
     queue[rear] = 0;
-    
     visited[0] = 1;
+
     while(front<=rear){
-        int start = queue[front++];
-        printf("%d ",start);
+        int source = queue[front++]; 
+        printf("%d ",source);
 
         for(int i=0;i<6;i++){
-            if(graph[start][i] == 1 && visited[i]!=1){
+            if(graph[source][i] == 1 && visited[i]!=1){
                 queue[++rear] = i;
                 visited[i] = 1;
             }
